@@ -1,0 +1,9 @@
+.description {
+    margin-top: 30px;
+    border: 1px solid white;
+    padding: 10px 2px;
+}
+.projectimage:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
