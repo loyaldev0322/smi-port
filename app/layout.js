@@ -20,7 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = '/default.js'; // Path to the script in the public folder
+    script.type = 'text/javascript';
+    script.src = 'https://embed.tawk.to/66a24b24becc2fed692afd1a/1i3kvb28h';
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
     script.async = true;
     document.body.appendChild(script);
 
