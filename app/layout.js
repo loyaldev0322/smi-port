@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import { ToastContainer } from "react-toastify";
@@ -7,6 +8,7 @@ import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 import ScrollToTop from "./components/helper/scroll-to-top";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,6 +18,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '/default.js'; // Path to the script in the public folder
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <html lang="en">
       <body className={inter.className}>
