@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect } from 'react';
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
@@ -8,14 +10,9 @@ import Navbar from "./components/navbar";
 import "./css/card.scss";
 import "./css/globals.scss";
 import ScrollToTop from "./components/helper/scroll-to-top";
+import { metadata } from './metadata'; // Import metadata from a separate file
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Portfolio of Tom Suzuki - Web Developer",
-  description:
-    "This is the portfolio of Tom Suzuki. I am a full stack Web developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
-};
 
 export default function RootLayout({ children }) {
   useEffect(() => {
